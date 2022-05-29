@@ -1,0 +1,5 @@
+node_modules/*
+.cache/*
+.env
+.cache/0e/aede3ea03219b226d850911077931d.json
+.cache/a1/a798df953eae79331be95b4f92dcb3.json

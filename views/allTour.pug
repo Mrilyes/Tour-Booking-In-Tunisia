@@ -1,0 +1,32 @@
+//- In this allTour I only gonna put the content of the specific page , so don't want no footer here and no header and none of the staff that I have in the base . (only the content of the allTour)
+//- then I will inject this content into the base template (the parent template) which this process called extending 
+
+//- extending the base.pug
+extends base
+//- afte extending then redefining the block
+block content
+  main.main 
+    .card-container
+
+      each tour in tours
+        .card
+          .card__header
+            .card__picture
+              .card__picture-overlay &nbsp;
+              img.card__picture-img(src=`/img/tours/${tour.imageCover}`)
+            
+              
+
+          .card__details
+            h4.card__sub-heading= `${tour.name}`
+            p.card__text= tour.summary
+            .card__data
+              svg.card__icon
+                use(xlink:href='/img/icons.svg#icon-map-pin')
+              span= tour.startLocation.description
+            .card__data
+              svg.card__icon
+                use(xlink:href='/img/icons.svg#icon-calendar')
+              span= tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
+             
+            a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Details

@@ -1,0 +1,48 @@
+{
+    "name": "tourbooking",
+    "version": "1.0.0",
+    "description": "restful api application using node js and mongoDB",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon server.js",
+        "prod": "SET NODE_ENV=production&&nodemon server.js",
+        "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mrilyes/RestFul-API-Tour-Booking.git"
+    },
+    "author": "\"Ilyes Ghalila\"",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Mrilyes/RestFul-API-Tour-Booking/issues"
+    },
+    "homepage": "https://github.com/Mrilyes/RestFul-API-Tour-Booking#readme",
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "axios": "^0.27.2",
+        "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "express-mongo-sanitize": "^2.2.0",
+        "express-rate-limit": "^6.3.0",
+        "helmet": "^3.23.3",
+        "hpp": "^0.2.3",
+        "jsonwebtoken": "^8.5.1",
+        "mapbox-gl": "^2.8.2",
+        "mongoose": "^5.13.14",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.1",
+        "nodemailer": "^6.7.3",
+        "pug": "^3.0.2",
+        "sharp": "^0.22.1",
+        "slugify": "^1.6.5",
+        "stripe": "^7.0.0",
+        "validator": "^13.7.0",
+        "xss-clean": "^0.1.1"
+    },
+    "devDependencies": {
+        "parcel-bundler": "^1.12.5"
+    }
+}
