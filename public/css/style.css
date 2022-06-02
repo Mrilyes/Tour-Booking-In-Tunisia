@@ -471,10 +471,10 @@ body {
     margin-right: 5rem;
 }
 .description-box .description__text {
-    font-size: 3rem;
+    font-size: 2.2rem;
 }
 .description-box .description__text:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .overview-box {

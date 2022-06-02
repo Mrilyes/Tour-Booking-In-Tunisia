@@ -12,9 +12,10 @@ module.exports = class Email {
 
     newTransport() {
         if (process.env.NODE_ENV === 'production') {
-            // sendgrid
             return 1;
         }
+
+        // Using mailtrap to test sending emails features
         return nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
             port: process.env.EMAIL_PORT,
