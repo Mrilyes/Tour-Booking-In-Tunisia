@@ -203,24 +203,25 @@ exports.forgotPassword = async (req, res, next) => {
     const resetToken = user.createPasswordResetToken();
     // validateBeforeSave : turn off the validation of the pwd
     await user.save({ validateBeforeSave: false });
-    // 3) send it to user's email
-    const resetURL = `${req.protocol}://${req.get(
-        'host'
-    )}/resetPassword/${resetToken}`;
 
-    const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to:
-    <button>
-        <a href="${resetURL}">
-        click here to reset your password
-        </a>
-    </button> `;
+    // const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to:
+    // <button>
+    //     <a href="${resetURL}">
+    //     click here to reset your password
+    //     </a>
+    // </button> `;
 
     try {
-        await Email({
-            email: user.email,
-            subject: 'Your password reset token(valid for 10min)',
-            message,
-        });
+        // 3) send it to user's email
+        const resetURL = `${req.protocol}://${req.get(
+            'host'
+        )}/resetPassword/${resetToken}`;
+        // await Email({
+        //     email: user.email,
+        //     subject: 'Your password reset token(valid for 10min)',
+        //     message,
+        // });
+        await new Email(user, resetURL).sendPasswordReset();
         res.status(200).json({
             status: 'success',
             message: 'Token send to email!',
