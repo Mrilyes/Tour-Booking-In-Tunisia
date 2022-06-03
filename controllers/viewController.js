@@ -92,6 +92,7 @@ exports.getMyTours = async (req, res, next) => {
     if (!bookings) res.send('nobooking');
     // 2) Find tours with the returned IDs
     const tourIDs = bookings.map((el) => el.tour);
+    // select all the tours in tourids array by using the $in is an operator
     const tours = await Tour.find({ _id: { $in: tourIDs } });
     // Render the page that contains the booked travels
     if (tourIDs.length === 0) {
