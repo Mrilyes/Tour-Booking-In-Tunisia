@@ -20,6 +20,8 @@ const cookieParser = require('cookie-parser');
 
 const helmet = require('helmet'); // setting security http headers
 
+const compression = require('compression');
+
 const mongoSanitize = require('express-mongo-sanitize');
 
 const xss = require('xss-clean');
@@ -60,6 +62,8 @@ app.use(
         ],
     })
 );
+
+app.use(compression());
 
 // console.log(process.env.NODE_ENV);
 
