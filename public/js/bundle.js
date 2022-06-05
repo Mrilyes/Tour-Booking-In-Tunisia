@@ -12025,8 +12025,8 @@ var userPasswordForm = document.querySelector('.form-user-password');
 var bookBtn = document.getElementById('book-tour');
 var reviews = document.querySelector('.reviews'); // DELEGATION
 // if (mapBox) {
-//   const locations = JSON.parse(mapBox.dataset.locations);
-//   displayMap(locations);
+//     const locations = JSON.parse(mapBox.dataset.locations);
+//     displayMap(locations);
 // }
 
 if (signupForm) {
@@ -12267,7 +12267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53914" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55940" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
